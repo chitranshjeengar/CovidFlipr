@@ -55,7 +55,13 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Covid-19 Stats'),
+        title: _selectedId == 0
+            ? Text('Hospital Dashboard')
+            : (_selectedId == 1
+                ? Text('Contact & Helpline')
+                : (_selectedId == 2
+                    ? Text('Latest Releases')
+                    : Text('Daily Sampling'))),
       ),
       body: _selectedId == 0
           ? (null)
